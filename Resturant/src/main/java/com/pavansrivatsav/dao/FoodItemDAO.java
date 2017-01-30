@@ -47,7 +47,6 @@ public class FoodItemDAO {
 			fi.setName(rs.getString("ITEM"));
 			fi.setPrice(rs.getInt("PRICE"));
 			return fi;
-
 		});
 
 	}

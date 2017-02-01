@@ -4,20 +4,22 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.pavansrivatsav.exception.ValidationException;
+import com.pavansrivatsav.exception.ServiceException;
 import com.pavansrivatsav.modal.FoodItem;
+import com.pavansrivatsav.service.ItemService;
 import com.pavansrivatsav.validator.ItemValidator;
 
 public class TestFoodItemDAO {
 
 	public static final Logger logger = Logger.getLogger(TestFoodItemDAO.class.getName());
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws ServiceException {
 
 		FoodItemDAO fidao = new FoodItemDAO();
 		FoodItem fiobj = new FoodItem(); // insert : use small object names
 
-		// /* Insert */
+		/* Insert */
 		//
 		// fiobj.setId(15);
 		// fiobj.setName("Juice");
@@ -43,8 +45,8 @@ public class TestFoodItemDAO {
 		//
 		// System.out.println(i);
 		// }
-		//
-		// /* Functions */
+
+		/* Functions */
 		//
 		// String itemPrice = fidao.itemPrice("idly");
 		// logger.log(Level.INFO, "Item Price " + itemPrice);
@@ -54,12 +56,15 @@ public class TestFoodItemDAO {
 
 		/* Validation */
 
-		ItemValidator valid = new ItemValidator();
-
-		fiobj.setName("idly");
-		fiobj.setId(1);
+		ItemService service = new ItemService();
+		fiobj.setName("Test");
+		fiobj.setId(0);
 		fiobj.setPrice(1);
-		valid.validateInsertItem(fiobj);
+		// ItemValidator valid=new ItemValidator();
+		// valid.validateInsert(fiobj);
+		service.insert(fiobj);
+
+		fidao.insert(fiobj); // getting inserted!!
 
 	}
 }

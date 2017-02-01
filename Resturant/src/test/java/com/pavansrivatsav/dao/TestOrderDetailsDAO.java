@@ -16,8 +16,6 @@ public class TestOrderDetailsDAO {
 	public static final Logger logger = Logger.getLogger(TestOrderDetailsDAO.class.getName());
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		OrderDetailsDAO ordao = new OrderDetailsDAO();
 		OrderDetails ord = new OrderDetails();
 		Order or = new Order();
@@ -66,7 +64,7 @@ public class TestOrderDetailsDAO {
 			// dd-MM-yyyy hh:mm:ss a to display date,time and [am or pm] -> (a)
 		}
 
-		/* Procedures */
+		/* Procedures */ // have to have o/p para compalsary
 
 		Map<String, Object> order = ordao.takeOrder("variety rice,snacks", "10,20", 1);
 		logger.log(Level.INFO, "" + order);

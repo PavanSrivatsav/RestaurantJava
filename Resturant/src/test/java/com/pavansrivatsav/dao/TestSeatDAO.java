@@ -11,7 +11,6 @@ public class TestSeatDAO {
 	public static final Logger logger = Logger.getLogger(TestSeatDAO.class.getName());
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Seat st = new Seat();
 		SeatDAO stdao = new SeatDAO();

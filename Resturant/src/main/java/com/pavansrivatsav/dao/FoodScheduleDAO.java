@@ -16,17 +16,16 @@ public class FoodScheduleDAO {
 
 	public void insert(final FoodSchedule fsched) {
 
-		final String sql = "insert into food_schedule (FOOD_TYPE,TIME_START,TIME_END) values(?,?,?)";
-		final Object[] params = { fsched.getFoodType(), fsched.getStartTime(), fsched.getEndTime() };
+		final String sql = "insert into food_schedule (ID,FOOD_TYPE,TIME_START,TIME_END) values(?,?,?,?)";
+		final Object[] params = { fsched.getId(), fsched.getFoodType(), fsched.getStartTime(), fsched.getEndTime() };
 		final int rows = jdbcTemplate.update(sql, params);
 		logger.log(Level.INFO, "No of rows inserted : " + rows);
 	}
 
 	public void update(final FoodSchedule fsched) {
 
-		// String sql="update food_schedule set ?=? where ?=?";
-		final String sql = "update food_schedule set TIME_START=? where ID=?";
-		final Object[] params = { fsched.getStartTime(), fsched.getId() };
+		final String sql = "update food_schedule set TIME_START=? , TIME_END=? where ID=?";
+		final Object[] params = { fsched.getStartTime(), fsched.getEndTime(), fsched.getId() };
 		final int rows = jdbcTemplate.update(sql, params);
 		logger.log(Level.INFO, "No of rows updated :" + rows);
 	}

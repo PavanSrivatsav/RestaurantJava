@@ -12,7 +12,6 @@ public class TestOrderDAO {
 	public static final Logger logger = Logger.getLogger(TestOrderDAO.class.getName());
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Order or = new Order();
 		OrderDAO ordao = new OrderDAO();

@@ -20,56 +20,59 @@ public class TestFoodItemDAO {
 		FoodItem fiobj = new FoodItem(); // insert : use small object names
 
 		/* Insert */
-		//
-		// fiobj.setId(15);
-		// fiobj.setName("Juice");
-		// fiobj.setPrice(40);
-		//
-		// fidao.insert(fiobj);
-		//
-		// /* Update */
-		//
-		// fiobj.setName("Mango Juice");
-		// fiobj.setId(15);
-		//
-		// fidao.update(fiobj);
-		//
-		// /* Delete */
-		//
-		// fidao.delete("Mango Juice");
-		//
-		// /* Select */
-		//
-		// List<FoodItem> flist = fidao.select();
-		// for (FoodItem i : flist) {
-		//
-		// System.out.println(i);
-		// }
+
+		fiobj.setId(15);
+		fiobj.setName("Juice");
+		fiobj.setPrice(40);
+
+		fidao.insert(fiobj);
+
+		/* Update */
+
+		fiobj.setName("Mango Juice");
+		fiobj.setId(15);
+
+		fidao.update(fiobj);
+
+		/* Delete */
+
+		fidao.delete("Mango Juice");
+
+		/* Select */
+
+		List<FoodItem> flist = fidao.select();
+		for (FoodItem i : flist) {
+
+			System.out.println(i);
+		}
 
 		/* Functions */
-		//
-		// String itemPrice = fidao.itemPrice("asd");
-		// logger.log(Level.INFO, "Item Price : " + itemPrice);
-		//
-		// Boolean itemValid = fidao.itemValid("jaf");
-		// logger.log(Level.INFO, "Item Valid : " + itemValid);
+
+		Integer itemPrice = fidao.itemPrice("sadsad");
+		logger.log(Level.INFO, "Item Price : " + itemPrice);
+
+		Boolean itemValid = fidao.itemValid("jaf");
+		logger.log(Level.INFO, "Item Valid : " + itemValid);
 
 		/* Validation */
 
 		FoodItemService service = new FoodItemService();
-		// fiobj.setName("Test");
-		// fiobj.setId(16);
-		// fiobj.setPrice(1);
-		// // FoodItemValidator valid = new FoodItemValidator();
-		// // valid.validateInsert(fiobj);
-		// service.insert(fiobj);
-		//
-		// fidao.insert(fiobj); // getting inserted!!
+		fiobj.setName("Test");
+		fiobj.setId(16);
+		fiobj.setPrice(1);
 
-		// int a = service.itemPriceFn("asdas");
-		// System.out.println(a);
+		FoodItemValidator valid = new FoodItemValidator();
+		valid.validateInsert(fiobj);
 
-		// valid.validateItemPriceFn("");
+		service.insert(fiobj);
+
+		fidao.insert(fiobj); // getting inserted!!
+
+		int a = service.itemPriceFn("asdas");
+		System.out.println(a);
+
+		valid.validateItemPriceFn("");
+
 		fiobj.setName("Test");
 		service.delete(fiobj);
 

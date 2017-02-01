@@ -8,6 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ConnectionUtil {
 
+	private ConnectionUtil() {
+
+	}
+
 	private static DataSource getDataSource() {
 		final BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");

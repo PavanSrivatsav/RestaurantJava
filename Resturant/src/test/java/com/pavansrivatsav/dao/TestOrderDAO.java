@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.pavansrivatsav.exception.ServiceException;
-import com.pavansrivatsav.exception.ValidationException;
 import com.pavansrivatsav.modal.Order;
 import com.pavansrivatsav.modal.Seat;
 import com.pavansrivatsav.service.OrderService;
@@ -20,57 +19,55 @@ public class TestOrderDAO {
 		OrderDAO ordao = new OrderDAO();
 		Seat st = new Seat();
 
-		// /* Insert */
-		//
-		// or.setId(1542);
-		//
-		// st.setSeatNo(10);
-		// or.setSeatObj(st);
-		//
-		// or.setStatus("REQUESTED");
-		//
-		// ordao.insert(or);
-		//
-		// /* Update */
-		//
-		// st.setSeatNo(10);
-		// or.setSeatObj(st);
-		//
-		// or.setStatus("SERVED");
-		//
-		// ordao.update(or);
-		// s
-		// /* Delete */
-		//
-		// ordao.delete(1542);
-		//
-		// /* Select */
-		//
-		// List<Order> list = ordao.select();
-		//
-		// for (Order i : list) {
-		//
-		// System.out.println(i.getId() + "\t" + i.getSeatObj().getSeatNo() +
-		// "\t" + i.getStatus());
-		// }
-		//
-		// /* Functions */
-		//
-		// Boolean entryFn = ordao.invalidEntry("a,b,c", "1,2,3");
-		// logger.log(Level.INFO, "Valid Entry : " + entryFn);
-		//
-		// Boolean maxLength = ordao.maxLength("a,b,c,d,e,f", "1,2,3,4,");
-		// logger.log(Level.INFO, "Max Length : " + !maxLength);
-		//
-		//
-		or.setId(0);
-		//
+		/* Insert */
+
+		or.setId(1542);
+
 		st.setSeatNo(10);
 		or.setSeatObj(st);
 
 		or.setStatus("REQUESTED");
 
-		// ordao.insert(or);
+		ordao.insert(or);
+
+		/* Update */
+
+		st.setSeatNo(10);
+		or.setSeatObj(st);
+
+		or.setStatus("SERVED");
+
+		ordao.update(or);
+
+		/* Delete */
+
+		ordao.delete(1542);
+
+		/* Select */
+
+		List<Order> list = ordao.select();
+
+		for (Order i : list) {
+
+			System.out.println(i.getId() + "\t" + i.getSeatObj().getSeatNo() + "\t" + i.getStatus());
+		}
+
+		/* Functions */
+
+		Boolean entryFn = ordao.invalidEntry("a,b,c", "1,2,3");
+		logger.log(Level.INFO, "Valid Entry : " + entryFn);
+
+		Boolean maxLength = ordao.maxLength("a,b,c,d,e,f", "1,2,3,4,");
+		logger.log(Level.INFO, "Max Length : " + !maxLength);
+
+		or.setId(0);
+
+		st.setSeatNo(10);
+		or.setSeatObj(st);
+
+		or.setStatus("REQUESTED");
+
+		ordao.insert(or);
 		OrderService service = new OrderService();
 		service.insert(or);
 

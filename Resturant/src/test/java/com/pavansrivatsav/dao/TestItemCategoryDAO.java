@@ -1,5 +1,7 @@
 package com.pavansrivatsav.dao;
 
+import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.pavansrivatsav.exception.ServiceException;
@@ -19,47 +21,46 @@ public class TestItemCategoryDAO {
 		FoodItem food = new FoodItem();
 		FoodSchedule foodsche = new FoodSchedule();
 
-		// /* insert */
-		//
-		// ict.setId(17);
-		//
-		// food.setId(15); // food_items
-		// ict.setFood(food);
-		//
-		// foodsche.setId(4); // food_schedule
-		//
-		// ict.setFoodSchedule(foodsche);
-		//
-		// ict.setQuantity(300);
-		//
-		// ictdao.insert(ict);
-		//
-		// /* update */
-		//
-		// ict.setId(17);
-		// foodsche.setId(3);
-		// ict.setFoodSchedule(foodsche);
-		//
-		// ictdao.update(ict);
-		//
-		// /* delete */
-		//
-		// ict.setId(17);
-		// ictdao.delete(17);
-		//
-		// /* select */
-		//
-		// List<ItemCategory> itclist = ictdao.select();
-		// for (ItemCategory i : itclist) {
-		// System.out.println(i.getId() + "\t" + i.getFood().getId() + "\t" +
-		// i.getFoodSchedule().getId() + "\t"
-		// + i.getQuantity());
-		// }
-		//
-		// /* Functions */
-		//
-		// Boolean quantityFnTest = ictdao.quantityAvil("idly", 1);
-		// logger.log(Level.INFO, "Quantity Available : " + quantityFnTest);
+		/* insert */
+
+		ict.setId(17);
+
+		food.setId(15); // food_items
+		ict.setFood(food);
+
+		foodsche.setId(4); // food_schedule
+
+		ict.setFoodSchedule(foodsche);
+
+		ict.setQuantity(300);
+
+		ictdao.insert(ict);
+
+		/* update */
+
+		ict.setId(17);
+		foodsche.setId(3);
+		ict.setFoodSchedule(foodsche);
+
+		ictdao.update(ict);
+
+		/* delete */
+
+		ict.setId(17);
+		ictdao.delete(17);
+
+		/* select */
+
+		List<ItemCategory> itclist = ictdao.select();
+		for (ItemCategory i : itclist) {
+			System.out.println(i.getId() + "\t" + i.getFood().getId() + "\t" + i.getFoodSchedule().getId() + "\t"
+					+ i.getQuantity());
+		}
+
+		/* Functions */
+
+		Boolean quantityFnTest = ictdao.quantityAvil("idly", 1);
+		logger.log(Level.INFO, "Quantity Available : " + quantityFnTest);
 
 		/* Validator */
 

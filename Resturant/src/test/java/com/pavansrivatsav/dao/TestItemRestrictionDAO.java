@@ -38,7 +38,7 @@ public class TestItemRestrictionDAO {
 		// }
 
 		ir.setId(0);
-		ir.setItemCount(10);
+		ir.setItemCount(0);
 
 		ItemRestrictionService irs = new ItemRestrictionService();
 		irs.insert(ir);

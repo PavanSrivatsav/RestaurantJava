@@ -53,11 +53,11 @@ public class FoodItemDAO {
 
 	/* Functions */
 
-	public String itemPrice(String itemName) {
+	public Integer itemPrice(String itemName) {
 		final String sql = "SELECT CHECK_PRICE_ITEM(?)";
 		Object[] params = { itemName };
 		// String item = jdbcTemplate.queryForObject(sql, params, String.class);
-		return jdbcTemplate.queryForObject(sql, params, String.class);
+		return jdbcTemplate.queryForObject(sql, params, Integer.class);
 	}
 
 	public Boolean itemValid(String item) {

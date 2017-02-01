@@ -10,27 +10,17 @@ public class ItemRestrictionValidator {
 
 	public void ItemRestricValidation(ItemRestriction itr) throws ValidationException {
 
-		if (itr == null) {
-
-			throw new ValidationException(" Invalid operation ");
-
-		}
+		ValidationUtil.isInvalidObject(itr, "Invalid Object");
 	}
 
 	public void IdValidation(Integer id) throws ValidationException {
 
-		if (ValidationUtil.isInvalidNumber(id)) {
-
-			throw new ValidationException("Invalid id");
-		}
+		ValidationUtil.isInvalidNumber(id, "Invalid id");
 	}
 
-	public void ItemCountRestricValidation(Integer itcr) throws ValidationException {
+	public void ItemCountRestricValidation(Integer count) throws ValidationException {
 
-		if (ValidationUtil.isInvalidNumber(itcr)) {
-
-			throw new ValidationException("Invalid restriction count");
-		}
+		ValidationUtil.isInvalidNumber(count, "Invalid Restriction Count");
 	}
 
 	public void validateInsert(ItemRestriction itr) throws ValidationException {
@@ -38,7 +28,6 @@ public class ItemRestrictionValidator {
 		ItemRestricValidation(itr);
 		IdValidation(itr.getId());
 		ItemCountRestricValidation(itr.getItemCount());
-
 	}
 
 	public void validateUpdate(ItemRestriction itr) throws ValidationException {

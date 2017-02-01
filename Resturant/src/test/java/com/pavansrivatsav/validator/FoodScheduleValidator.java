@@ -8,42 +8,25 @@ import com.pavansrivatsav.util.ValidationUtil;
 
 public class FoodScheduleValidator {
 
-	ValidationUtil validationUtil = new ValidationUtil();
-
 	public void FoodScheduleValidation(FoodSchedule sche) throws ValidationException {
 
-		if (sche == null) {
+		ValidationUtil.isInvalidObject(sche, "Invalid operation");
 
-			throw new ValidationException(" Invalid operation ");
-
-		}
 	}
 
 	public void IdValidation(Integer id) throws ValidationException {
 
-		if (ValidationUtil.isInvalidNumber(id)) {
-
-			throw new ValidationException("Invalid id");
-		}
+		ValidationUtil.isInvalidNumber(id, "Invalid Id");
 	}
 
 	public void foodTypeValidator(String foodType) throws ValidationException {
 
-		if (ValidationUtil.isInvalidString(foodType)) {
-
-			throw new ValidationException(" Invalid food type");
-
-		}
+		ValidationUtil.isInvalidString(foodType, "Invalid Food type");
 	}
 
 	public void timeValidator(LocalTime timeStart) throws ValidationException {
 
-		if (ValidationUtil.isInvalidString(timeStart)) {
-
-			throw new ValidationException("Invalid time");
-
-		}
-
+		ValidationUtil.isInvalidTime(timeStart, "Invalid Time");
 	}
 
 	public void validateInsert(FoodSchedule sche) throws ValidationException {

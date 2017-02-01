@@ -48,7 +48,7 @@ public class SeatDAO {
 			Seat st = new Seat();
 			st.setId(rs.getInt("ID"));
 			st.setSeatNo(rs.getInt("SEAT_NO"));
-			st.setStatus(rs.getInt("STATUS"));
+			st.setStatus(rs.getBoolean("STATUS"));
 			return st;
 
 		});

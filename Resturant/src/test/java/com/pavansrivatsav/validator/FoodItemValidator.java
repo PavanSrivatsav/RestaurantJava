@@ -4,45 +4,32 @@ import com.pavansrivatsav.exception.ValidationException;
 import com.pavansrivatsav.modal.FoodItem;
 import com.pavansrivatsav.util.ValidationUtil;
 
-public class ItemValidator {
+public class FoodItemValidator {
 
 	FoodItem item = new FoodItem();
 
 	public void itemValidation(FoodItem item) throws ValidationException {
 
-		if (item == null) {
-
-			throw new ValidationException(" Invalid operation ");
-
-		}
+		ValidationUtil.isInvalidObject(item, "Invalid Operation");
 	}
 
 	public void idValidator(Integer id) throws ValidationException {
 
-		if (ValidationUtil.isInvalidNumber(id)) {
-
-			throw new ValidationException(" Invalid Id ");
-
-		}
+		ValidationUtil.isInvalidNumber(id, "Invalid id");
 	}
 
 	public void itemValidator(String item) throws ValidationException {
 
-		if (ValidationUtil.isInvalidString(item)) {
-
-			throw new ValidationException(" Invalid Item Entry");
-
-		}
+		ValidationUtil.isInvalidString(item, "Invalid Item Entry");
 	}
 
 	public void priceValidator(Integer price) throws ValidationException {
 
-		if (ValidationUtil.isInvalidNumber(price)) {
+		ValidationUtil.isInvalidNumber(price, "Invalid Price Entered");
+	}
 
-			throw new ValidationException("Invalid Price entered");
-
-		}
-
+	public void validateItemPriceFn(String name) throws ValidationException { // function
+		ValidationUtil.isInvalidString(name, "Invalid item ");
 	}
 
 	public void validateInsert(FoodItem item) throws ValidationException {

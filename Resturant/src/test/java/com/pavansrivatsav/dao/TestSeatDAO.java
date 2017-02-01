@@ -19,14 +19,14 @@ public class TestSeatDAO {
 
 		st.setId(11);
 		st.setSeatNo(11);
-		st.setStatus(0);
+		st.setStatus(false);
 
 		stdao.insert(st);
 
 		/* Update */
 
 		st.setId(10);
-		st.setStatus(1);
+		st.setStatus(true);
 
 		stdao.update(st);
 

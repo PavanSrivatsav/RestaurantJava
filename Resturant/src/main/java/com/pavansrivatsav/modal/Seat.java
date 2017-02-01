@@ -6,5 +6,5 @@ import lombok.Data;
 public class Seat {
 	private Integer id;
 	private Integer seatNo;
-	private Integer status;
+	private Boolean status;
 }
